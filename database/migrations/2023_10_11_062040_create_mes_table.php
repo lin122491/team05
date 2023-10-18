@@ -15,10 +15,8 @@ class CreateMesTable extends Migration
     {
         Schema::create('mes', function (Blueprint $table) {
             $table->id();
-            $table->var('region');
             $table->string('url');
-            $table->timestamps('created_at');
-            $table->timestamps('updated_at');
+            $table->timestamps();
         });
     }
 
