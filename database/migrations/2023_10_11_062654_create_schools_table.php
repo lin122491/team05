@@ -17,7 +17,11 @@ class CreateSchoolsTable extends Migration
             $table->id();
             $table->string('school')->comment('學校');
             $table->string('academic_system')->comment('學制');
-            $table->integer('mid')->unsigned()->comment('縣市');
+            $table->foreignId('mid')->comment('縣市');
+            $table->foreign('mid')
+                    ->references('id')
+                    ->on('mes')
+                    ->onDelete('cascade');
             $table->string('public_and_private')->comment('公私立');
             $table->string('address')->comment('地址');
             $table->string('phone')->comment('電話');
