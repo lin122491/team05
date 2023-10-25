@@ -15,7 +15,8 @@ class CreateMesTable extends Migration
     {
         Schema::create('mes', function (Blueprint $table) {
             $table->id();
-            $table->string('url');
+            $table->string('region')->comment('地區');
+            $table->string('url')->comment('網址');
             $table->timestamps();
         });
     }

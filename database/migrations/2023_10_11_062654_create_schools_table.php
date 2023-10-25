@@ -15,10 +15,14 @@ class CreateSchoolsTable extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
-            $table->string('school');
-            $table->string('academic system');
-            $table->string('public and private');
-            $table->string('address');
+            $table->string('school')->comment('學校');
+            $table->string('academic_system')->comment('學制');
+            $table->integer('mid')->unsigned()->comment('縣市');
+            $table->string('public_and_private')->comment('公私立');
+            $table->string('address')->comment('地址');
+            $table->string('phone')->comment('電話');
+            $table->double ('school_area')->comment('學校面積');
+            $table->date ('year_of_establishment')->comment('成立年份');
             $table->timestamps();
         });
     }
