@@ -1,10 +1,8 @@
-<html>
+@extends('app')
 
-<head>
-    <title>列出教育部</title>
-</head>
+@section('title', '學校網站 - 列出所有教育部')
 
-<body>
+@section('school_contents')
 <h1>列出所有教育部</h1>
 
 <table>
@@ -27,9 +25,4 @@
         </tr>
     @endfor
 <table>
-
-
-</body>
-</html>
-
-
+@endsection

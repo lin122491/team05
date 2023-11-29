@@ -15,7 +15,7 @@ use App\Http\Controllers\MesController;
 */
 
 Route::get('/', function () {
-    return redirect('mes');
+    return redirect('school');
 
 });
     Route::get('school', [SchoolController::class, 'index'])->name('school.index');

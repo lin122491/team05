@@ -1,10 +1,8 @@
-<html>
+@extends('app')
 
-<head>
-    <title>列出所有學校</title>
-</head>
+@section('title', '學校網站 - 列出所有學校')
 
-<body>
+@section('school_contents')
 <h1>列出所有學校</h1>
 
 <table>
@@ -29,15 +27,11 @@
             <td>{{ $school[$i]['public_and_private'] }}</td>
             <td>{{ $school[$i]['address'] }}</td>
             <td>{{ $school[$i]['phone'] }}</td>
-            <td><a href="{{ route('schools.show', ['id'=>$school[$i]['id']]) }}">顯示</a></td>
-            <td><a href="{{ route('schools.edit', ['id'=>$school[$i]['id']]) }}">修改</a></td>    
+            <td><a href="{{ route('school.show', ['id'=>$school[$i]['id']]) }}">顯示</a></td>
+            <td><a href="{{ route('school.edit', ['id'=>$school[$i]['id']]) }}">修改</a></td>    
             <td>刪除</td>    
         </tr>
     @endfor
 <table>
-
-
-</body>
-</html>
-
+@endsection
 
