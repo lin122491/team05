@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\MesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('mes');
+
 });
+    Route::get('school', [SchoolController::class, 'index'])->name('school.index');
+    Route::get('school/{id}', [SchoolController::class, 'show'])->where('id', '[0-9]+')->name('school.show');
+    Route::get('school/{id}/edit', [SchoolController::class, 'edit'])->where('id', '[0-9]+')->name('school.edit');
+
+    Route::get('mes', [MesController::class, 'index'])->name('mes.index');
+    Route::get('mes/{id}', [MesController::class, 'show'])->where('id', '[0-9]+')->name('mes.show');
+    Route::get('mes/{id}/edit', [MesController::class, 'edit'])->where('id', '[0-9]+')->name('mes.edit');

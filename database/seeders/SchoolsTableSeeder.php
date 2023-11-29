@@ -8050,7 +8050,7 @@ class SchoolsTableSeeder extends Seeder
     }
     public function generateSchools()
     {
-        $schools = array(
+        $school = array(
             '國立政治大學', 
             '國立清華大學', 
             '國立臺灣大學', 
@@ -12064,7 +12064,7 @@ class SchoolsTableSeeder extends Seeder
             '縣立正義國小', 
             '縣立西口國小'
         );
-        return $schools[rand(0,count($schools)-1)];
+        return $school[rand(0,count($school)-1)];
     }  
     public function generateAcademic_system()
     {

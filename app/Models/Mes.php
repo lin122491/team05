@@ -9,4 +9,8 @@ class Mes extends Model
 {
     use HasFactory;
     protected $table = 'mes';
+    protected $fillable =[
+        'region',
+        'url',
+    ];
 }
