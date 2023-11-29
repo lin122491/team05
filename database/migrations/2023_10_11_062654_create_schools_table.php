@@ -25,8 +25,6 @@ class CreateSchoolsTable extends Migration
             $table->string('public_and_private')->comment('公私立');
             $table->string('address')->comment('地址');
             $table->string('phone')->comment('電話');
-            $table->double ('school_area')->comment('學校面積');
-            $table->date ('year_of_establishment')->comment('成立年份');
             $table->timestamps();
         });
     }
