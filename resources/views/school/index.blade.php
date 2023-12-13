@@ -18,20 +18,20 @@
         <th>操作2</th>
         <th>操作3</th>
     </tr>
-    @for($i=0; $i<count($school); $i++)
+    @foreach ($school as $school)
         <tr>
-            <td>{{ $school[$i]['id'] }}</td>
-            <td>{{ $school[$i]['school'] }}</td>
-            <td>{{ $school[$i]['academic_system'] }}</td>
-            <td>{{ $school[$i]['mid'] }}</td>
-            <td>{{ $school[$i]['public_and_private'] }}</td>
-            <td>{{ $school[$i]['address'] }}</td>
-            <td>{{ $school[$i]['phone'] }}</td>
-            <td><a href="{{ route('school.show', ['id'=>$school[$i]['id']]) }}">顯示</a></td>
-            <td><a href="{{ route('school.edit', ['id'=>$school[$i]['id']]) }}">修改</a></td>    
+            <td>{{ $school->id}}</td>
+            <td>{{ $school->school}}</td>
+            <td>{{ $school->academic_system }}</td>
+            <td>{{ $school->mid }}</td>
+            <td>{{ $school->public_and_private}}</td>
+            <td>{{ $school->address}}</td>
+            <td>{{ $school->phone}}</td>
+            <td><a href="{{ route('school.show', ['id'=>$school->id]) }}">顯示</a></td>
+            <td><a href="{{ route('school.edit', ['id'=>$school->id]) }}">修改</a></td>    
             <td>刪除</td>    
         </tr>
-    @endfor
+    @endforeach
 <table>
 @endsection
 

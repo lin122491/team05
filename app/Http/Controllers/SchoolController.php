@@ -14,8 +14,8 @@ class SchoolController extends Controller
     public function index()
     {
         //
-        $p = School::all()->toArray();
-        return view('school.index')->with('school', $p);
+        $school = School::all();
+        return view('school.index')->with('school', $school);
     }
 
     /**
@@ -49,8 +49,9 @@ class SchoolController extends Controller
     public function show($id)
     {
         //
-        return School::findOrFail($id)->toArray();
-    
+        $school=School::findOrFail($id);
+        return;
+        return view('school.show')->with('school', $school);
     }
 
     /**

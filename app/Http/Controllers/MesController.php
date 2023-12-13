@@ -14,8 +14,8 @@ class MesController extends Controller
     public function index()
     {
         //
-        $t = Mes::all()->toArray();
-        return view('mes.index')->with('mes', $t);
+        $mes = Mes::all();
+        return view('mes.index')->with('mes',$mes);
     }
 
     /**
@@ -48,7 +48,9 @@ class MesController extends Controller
     public function show($id)
     {
         //
-        return Mes::findOrFail($id)->toArray();
+        $mes=Mes::findOrFail($id);
+        return;
+        return view('mes.show')->with('mes', $mes);
     }
 
     /**

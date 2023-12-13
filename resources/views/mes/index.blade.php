@@ -14,15 +14,15 @@
         <th>操作2</th>
         <th>操作3</th>
     </tr>
-    @for($i=0; $i<count($mes); $i++)
+    @foreach ($mes as $mes)
         <tr>
-            <td>{{ $mes[$i]['id'] }}</td>
-            <td>{{ $mes[$i]['region'] }}</td>
-            <td>{{ $mes[$i]['url'] }}</td>
-            <td><a href="{{ route('mes.show', ['id'=>$mes[$i]['id']]) }}">顯示</a></td>
-            <td><a href="{{ route('mes.edit', ['id'=>$mes[$i]['id']]) }}">修改</a></td>    
+            <td>{{ $mes->id }}</td>
+            <td>{{ $mes->region}}</td>
+            <td>{{ $mes->url}}</td>
+            <td><a href="{{ route('mes.show', ['id'=>$mes->id]) }}">顯示</a></td>
+            <td><a href="{{ route('mes.edit', ['id'=>$mes->id]) }}">修改</a></td>    
             <td>刪除</td>    
         </tr>
-    @endfor
+    @endforeach
 <table>
 @endsection
