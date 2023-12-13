@@ -1,0 +1,9 @@
+diff a/resources/views/players/show.blade.php b/resources/views/players/show.blade.php    (rejected hunks)
+@@ -0,6 +0,7 @@
+ 
+ @section('school_theme', '您所選取的球員資料')
+ 
++@section('school_contents')
+ 學校編號：{{ $school->id }}<br/>
+ 學校名稱：{{ $school->school }}<br/>
+ 所屬縣市：{{ $school->mid }}<br/>

@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('title', '顯示特定學校')
+
 @section('school_theme', '您所選取學校資料')
 <h1>列出所有學校<h1>
 @section('school_contents')

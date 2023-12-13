@@ -4,7 +4,10 @@
 
 @section('school_contents')
 <h1>列出所有教育部</h1>
-
+<div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
+    <a href="{{ route('mes.create') }} ">新增教育部</a>
+    <a href="{{ route('mes.index') }} ">所有教育部</a>
+</div>
 <table>
     <tr>
         <th>編號</th>

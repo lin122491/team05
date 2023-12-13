@@ -37,6 +37,16 @@ class MesController extends Controller
     public function store(Request $request)
     {
         //
+        $region = $request->input('region');
+        $url = $request->input('url');
+
+        Mes::create([
+            'region' => $region,
+            'url' => $url,
+
+        ]);
+
+        return redirect('mes');
     }
 
     /**
@@ -76,6 +86,13 @@ class MesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $mes = Mes::findOrFail($id);
+
+        $mes->name = $request->input('region');
+        $mes->city = $request->input('url');
+        $mes->save();
+
+        return redirect('mes');
     }
 
     /**
