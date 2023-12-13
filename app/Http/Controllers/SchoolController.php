@@ -83,7 +83,8 @@ class SchoolController extends Controller
     public function edit($id)
     {
         //
-        return School::findOrFail($id)->toArray();
+        $school = School::findOrFail($id);
+        return view('school.edit', ['school'=>$school]);
     
     }
 

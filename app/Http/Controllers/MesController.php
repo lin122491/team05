@@ -26,6 +26,7 @@ class MesController extends Controller
     public function create()
     {
         //
+        return view('mes.create');
     }
 
     /**
@@ -73,7 +74,8 @@ class MesController extends Controller
     public function edit($id)
     {
         //
-        return Mes::findOrFail($id)->toArray();
+        $mes = Mes::findOrFail($id);
+        return view('mes.edit', ['mes'=>$mes]);
     }
 
     /**
