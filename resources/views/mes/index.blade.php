@@ -22,6 +22,13 @@
             <td><a href="{{ route('mes.show', ['id'=>$mes->id]) }}">顯示</a></td>
             <td><a href="{{ route('mes.edit', ['id'=>$mes->id]) }}">修改</a></td>    
             <td>刪除</td>    
+            <td>
+                <form action="{{ url('/mes/delete', ['id' => $mes->id]) }}" method="post">
+                    <input class="btn btn-default" type="submit" value="刪除" />
+                    @method('delete')
+                    @csrf
+                </form>
+            </td>
         </tr>
     @endforeach
 <table>

@@ -17,4 +17,9 @@ class School extends Model
         'address',
         'phone'
     ];
+    
+    public function mes()
+    {
+        return $this->belongsTo('App\Models\mes', 'mid', 'id');
+    }
 }

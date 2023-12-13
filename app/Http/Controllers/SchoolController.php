@@ -37,8 +37,7 @@ class SchoolController extends Controller
     public function store(Request $request)
     {
         //
-
-    }
+            }
 
     /**
      * Display the specified resource.
@@ -50,8 +49,8 @@ class SchoolController extends Controller
     {
         //
         $school=School::findOrFail($id);
-        return;
-        return view('school.show')->with('school', $school);
+        return view('school.show')->with('school',$school);
+
     }
 
     /**
@@ -88,5 +87,8 @@ class SchoolController extends Controller
     public function destroy($id)
     {
         //
+        $school = School::findOrFail($id);
+        $school->delete();
+        return redirect('school');
     }
 }

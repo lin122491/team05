@@ -48,9 +48,10 @@ class MesController extends Controller
     public function show($id)
     {
         //
+
         $mes=Mes::findOrFail($id);
-        return;
-        return view('mes.show')->with('mes', $mes);
+        $schools = $mes->schools;
+        return view('mes.show',['mes'=>$mes,'schools'=>$schools]);
     }
 
     /**
@@ -86,5 +87,8 @@ class MesController extends Controller
     public function destroy($id)
     {
         //
+        $mes = Mes::findOrFail($id);
+        $mes->delete();
+        return redirect('mes');
     }
 }

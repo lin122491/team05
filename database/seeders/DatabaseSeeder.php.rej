@@ -1,0 +1,10 @@
+diff a/database/seeders/DatabaseSeeder.php b/database/seeders/DatabaseSeeder.php    (rejected hunks)
+@@ -13,6 +13,7 @@
+      */
+     public function run()
+     {
+-        // \App\Models\User::factory(10)->create();
++        $this->call(SchoolsTableSeeder::class);
++        $this->call(mesTableSeeder::class);
+     }
+ }

@@ -13,4 +13,15 @@ class Mes extends Model
         'region',
         'url',
     ];
+    
+    public function schools()
+    {
+        return $this->hasMany('App\Models\school', 'mid');
+    }
+
+    public function delete()
+    {
+        $this->schools()->delete();
+        return parent::delete();
+    }        
 }
