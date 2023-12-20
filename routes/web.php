@@ -25,14 +25,15 @@ Route::get('/', function () {
 
     Route::get('school/{id}/edit', [SchoolController::class, 'edit'])->where('id', '[0-9]+')->name('school.edit');
 
-    Route::delete('school/delete/{id}', [SchoolController::class, 'destroy'])->where('id', '[0-9]+')->name('schoool.destroy');
+    Route::delete('school/delete/{id}', [SchoolController::class, 'destroy'])->where('id', '[0-9]+')->name('school.destroy');
 
     Route::get('school/create', [SchoolController::class, 'create'])->name('school.create');
 
     Route::get('school/{id}/edit', [SchoolController::class, 'edit'])->where('id', '[0-9]+')->name('school.edit');
 
     Route::patch('school/update/{id}', [SchoolController::class, 'update'])->where('id', '[0-9]+')->name('school.update');
-
+// 儲存新學校資料
+    Route::post('school/store', [SchoolController::class, 'store'])->where('id', '[0-9]+')->name('school.store');
 
     Route::get('mes', [MesController::class, 'index'])->name('mes.index');
 

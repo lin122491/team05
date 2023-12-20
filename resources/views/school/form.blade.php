@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('mid', '縣市：') !!}
-    {!! Form::text('mid', null, ['class' => 'form-control']) !!}
+    {!! Form::select('mid', $mes, $mesSelected, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('public_and_private', '公私立：') !!}

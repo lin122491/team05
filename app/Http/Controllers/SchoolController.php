@@ -52,12 +52,12 @@ class SchoolController extends Controller
         $School = School::create([
             'school'=>$school,
             'mid'=>$mid,
-            'academic_system'=>$position,
-            'mid'=>$height,
-            'public'=>$weight,
-            'address'=>$year,
-            'phone'=>$nationality]);
-        return redirect('schools');
+            'academic_system'=>$academic_system,
+            'mid'=>$mid,
+            'public_and_private'=>$public_and_private,
+            'address'=>$address,
+            'phone'=>$phone]);
+        return redirect('school');
     }
 
     /**
@@ -84,8 +84,9 @@ class SchoolController extends Controller
     {
         //
         $school = School::findOrFail($id);
-        return view('school.edit', ['school'=>$school]);
-    
+        $mes = School::orderBy('mes.id', 'asc')->pluck('mes.region', 'mes.id');
+        $selected_tags = $school->mes->id;
+        return view('school.edit', ['school' =>$school, 'mes' => $mes, 'teamSelected' => $selected_tags]);
     }
 
     /**
@@ -100,13 +101,12 @@ class SchoolController extends Controller
         //
         $school = School::findOrFail($id);
 
-        $school->name = $request->input('school');
-        $school->city = $request->input('mid');
-        $school->home = $request->input('academic_system');
-        $school->zone = $request->input('mid');
-        $school->zone = $request->input('public_and_private');
-        $school->zone = $request->input('address');
-        $school->zone = $request->input('phone');
+        $school->school = $request->input('school');
+        $school->mid = $request->input('mid');
+        $school->academic_system = $request->input('academic_system');
+        $school->public_and_private = $request->input('public_and_private');
+        $school->address = $request->input('address');
+        $school->phone = $request->input('phone');
         $school->save();
 
         return redirect('school');
